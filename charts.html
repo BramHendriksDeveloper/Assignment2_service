@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Service - Dashboard</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Service - Dashboard</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/bootstrap-table.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
 
-<!--Icons-->
-<script src="js/lumino.glyphs.js"></script>
+	<!--Icons-->
+	<script src="js/lumino.glyphs.js"></script>
 
-<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
 <![endif]-->
@@ -31,10 +33,11 @@
 				</button>
 				<a class="navbar-brand" href="#"><span>ACS</span>Service</a>
 			</div>
-							
-		</div><!-- /.container-fluid -->
+
+		</div>
+		<!-- /.container-fluid -->
 	</nav>
-		
+
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<form role="search">
 			<div class="form-group">
@@ -42,44 +45,28 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Widgets</a></li>
-			<li class="active"><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
-			<li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
-			<li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li>
-			<li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
-			<li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>
-			<li class="parent ">
-				<a href="#">
-					<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown 
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 1
-						</a>
-					</li>
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 2
-						</a>
-					</li>
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 3
-						</a>
-					</li>
-				</ul>
+			<li>
+				<a href="index.html">
+					<svg class="glyph stroked dashboard-dial">
+						<use xlink:href="#stroked-dashboard-dial"></use>
+					</svg> Monteur & Systeem overzicht</a>
+			</li>
+			<li class="active">
+				<a href="charts.html">
+					<svg class="glyph stroked line-graph">
+						<use xlink:href="#stroked-line-graph"></use>
+					</svg> Service monitor</a>
 			</li>
 		</ul>
-		
-	</div><!--/.sidebar-->
-		
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">		
+
+	</div>
+	<!--/.sidebar-->
+
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-md-6">
 				<div class="panel panel-default">
-					<div class="panel-heading">Line Chart</div>
+					<div class="panel-heading">Vraag en aanbod service Duitsland</div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
 							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
@@ -87,12 +74,9 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-md-6">
 				<div class="panel panel-default">
-					<div class="panel-heading">Bar Chart</div>
+					<div class="panel-heading">Uitgelopen en niet uitgelopen onderhoud</div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
 							<canvas class="main-chart" id="bar-chart" height="200" width="600"></canvas>
@@ -100,72 +84,148 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->		
-		
+		</div>
+		<!--/.row-->
+
 		<div class="row">
+
 			<div class="col-md-6">
 				<div class="panel panel-default">
-					<div class="panel-heading">Pie Chart</div>
+					<div class="panel-heading">Klant overzicht</div>
 					<div class="panel-body">
-						<div class="canvas-wrapper">
-							<canvas class="chart" id="pie-chart" ></canvas>
-						</div>
+						<table data-toggle="table" id="table-style" data-url="tables/data2.json" data-row-style="rowStyle">
+							<thead>
+								<tr>
+									<th data-field="customer" data-align="right">Klant</th>
+									<th data-field="hours">Extra Uren</th>
+									<th data-field="price">Kosten</th>
+									<th data-field="correctief">Correctieve uren</th>
+									<th data-field="preventief">Preventieve uren</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="warning">
+									<td data-field="customer">Avans</td>
+									<td data-field="hours">10</td>
+									<td data-field="price">€15.000</td>
+									<td data-field="correctief">11</td>
+									<td data-field="preventief">24</td>
+								</tr>
+								<tr class="success">
+									<td data-field="product">HAN</td>
+									<td data-field="hours">34</td>
+									<td data-field="price">€42.000</td>
+									<td data-field="correctief">15</td>
+									<td data-field="preventief">15</td>
+								</tr>
+								<tr class="danger">
+									<td data-field="product">HAS</td>
+									<td data-field="hours">1</td>
+									<td data-field="price">€13.000</td>
+									<td data-field="correctief">15</td>
+									<td data-field="preventief">30</td>
+								</tr>
+							</tbody>
+						</table>
+						<script>
+						    $(function () {
+						        $('#hover, #striped, #condensed').click(function () {
+						            var classes = 'table';
+						
+						            if ($('#hover').prop('checked')) {
+						                classes += ' table-hover';
+						            }
+						            if ($('#condensed').prop('checked')) {
+						                classes += ' table-condensed';
+						            }
+						            $('#table-style').bootstrapTable('destroy')
+						                .bootstrapTable({
+						                    classes: classes,
+						                    striped: $('#striped').prop('checked')
+						                });
+						        });
+						    });
+						</script>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="panel panel-default">
-					<div class="panel-heading">Doughnut Chart</div>
-					<div class="panel-body">
-						<div class="canvas-wrapper">
-							<canvas class="chart" id="doughnut-chart" ></canvas>
+
+					<div class="panel-body tabs">
+						<div class="panel-heading">Winstmarge op SLA
+						</div>
+						<ul class="nav nav-pills">
+							<li class="active"><a href="#pilltab1" data-toggle="tab">Avans</a></li>
+							<li><a href="#pilltab2" data-toggle="tab">HAN</a></li>
+							<li><a href="#pilltab3" data-toggle="tab">HAS</a></li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="pilltab1">
+								<div class="canvas-wrapper">
+									<canvas class="chart" id="doughnut-chart"></canvas>
+									<p>Totale kosten: 23.000€</p>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="pilltab2">
+								<div class="tab-pane fade in active" id="pilltab1">
+									<div class="canvas-wrapper">
+										<canvas class="chart" id="doughnut-chart"></canvas>
+										<p>Totale kosten: 23.000€</p>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="pilltab3">
+								<div class="canvas-wrapper">
+									<div class="canvas-wrapper">
+										<canvas class="chart" id="doughnut-chart"></canvas>
+										<p>Totale kosten: 23.000€</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Label:</h4>
-						<div class="easypiechart" id="easypiechart-blue" data-percent="92" ><span class="percent">92%</span>
-						</div>
+		</div>
+	</div>
+	<!--/.row-->
+
+	<div class="row" style="margin-left: 30rem">
+		<div class="col-xs-6 col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-body easypiechart-panel">
+					<h4>First time right:</h4>
+					<div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Label:</h4>
-						<div class="easypiechart" id="easypiechart-orange" data-percent="65" ><span class="percent">65%</span>
-						</div>
+		</div>
+		<div class="col-xs-6 col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-body easypiechart-panel">
+					<h4>Gepland onderhoud:</h4>
+					<div class="easypiechart" id="easypiechart-orange" data-percent="65"><span class="percent">65</span>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Label:</h4>
-						<div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span class="percent">56%</span>
-						</div>
+		</div>
+		<div class="col-xs-6 col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-body easypiechart-panel">
+					<h4>Ongepland onderhoud:</h4>
+					<div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27</span>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6 col-md-3">
-				<div class="panel panel-default">
-					<div class="panel-body easypiechart-panel">
-						<h4>Label:</h4>
-						<div class="easypiechart" id="easypiechart-red" data-percent="27" ><span class="percent">27%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
-											
-	</div>	<!--/.main-->
-	  
+		</div>
+	</div>
+	<!--/.row-->
+
+	</div>
+	<!--/.main-->
+
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -174,6 +234,7 @@
 	<script src="js/easypiechart.js"></script>
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
 	<script>
 		!function ($) {
 		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
@@ -188,7 +249,7 @@
 		$(window).on('resize', function () {
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
-	</script>	
+	</script>
 </body>
 
 </html>
