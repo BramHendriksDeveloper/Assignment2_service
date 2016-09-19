@@ -39,6 +39,12 @@ $(function() {
         barColor: '#1ebfae'
     });
 });
+$(function() {
+    $('.easypiechart-green').easyPieChart({
+        scaleColor: false,
+        barColor: '#189E52'
+    });
+});
 
 $(function() {
     $('.easypiechart-orange').easyPieChart({

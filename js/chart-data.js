@@ -54,9 +54,27 @@ var barChartData = {
 			data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
 		}
 	]
-
 }
 
+var barChartData2 = {
+	labels: ["Sys1", "Sys2", "Sys3", "Sys4", "Sys5", "Sys6", "Sys7"],
+	datasets : [
+				{
+					fillColor : "rgba(24, 158, 82, 0.2)",
+					strokeColor : "rgba(24, 158, 82, 0.8)",
+					highlightFill : "rgba(24, 158, 82, 0.75)",
+					highlightStroke : "rgba(24, 158, 82, 1)",
+					data : [null,100,90,null,null,73,85]
+				},
+				{
+					fillColor : "rgba(255,51,0,0.5)",
+					strokeColor : "rgba(255,51,0,0.8)",
+					highlightFill: "rgba(255,51,0,0.75)",
+					highlightStroke: "rgba(255,51,0,1)",
+					data : [52,null,null,30,5,null,null]
+				}
+			]
+}
 var pieData = [
 				{
 		value: 100,
@@ -165,6 +183,13 @@ window.onload = function () {
 	if (chart5) {
 		chart5 = chart5.getContext("2d");
 		window.myPie = new Chart(chart5).Pie(pieData2, {
+			responsive: true
+		});
+	}
+	var chart6 = document.getElementById("bar-chart2");
+	if (chart6) {
+		chart6 = chart6.getContext("2d");
+		window.myBar = new Chart(chart6).Bar(barChartData2, {
 			responsive: true
 		});
 	}
