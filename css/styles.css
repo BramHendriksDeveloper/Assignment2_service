@@ -949,6 +949,10 @@ h1.page-header {
 	color: rgba(48, 164, 255, 1);
 }
 
+.greyLabel {
+	color: #5f6468;
+}
+
 .noMargin {
 	margin: 0;
 	margin-right: 5px;
