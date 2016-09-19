@@ -8,8 +8,8 @@
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
-	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/bootstrap-table.css" rel="stylesheet">
 
 	<!--Icons-->
 	<script src="js/lumino.glyphs.js"></script>
@@ -51,13 +51,13 @@
 						<use xlink:href="#stroked-dashboard-dial"></use>
 					</svg> Monteur & Systeem overzicht</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="charts.html">
 					<svg class="glyph stroked line-graph">
 						<use xlink:href="#stroked-line-graph"></use>
 					</svg> Service monitor</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="index.strategisch.html">
 					<svg class="glyph stroked line-graph">
 						<use xlink:href="#stroked-line-graph"></use>
@@ -76,66 +76,86 @@
 
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">Vraag en aanbod service Duitsland</div>
-					<div class="panel-body">
-						<div class="canvas-wrapper">
-							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+			<div class="col-md-6 noMargin2">
+				<div class="col-xs-6 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body easypiechart-panel">
+							<h4>Totaal aantal monteurs</h4>
+							<div class="easypiechart" id="easypiechart-blue" data-percent="100"><span class="percent">152</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body easypiechart-panel">
+							<h4>Beschikbare monteurs</h4>
+							<div class="easypiechart" id="easypiechart-orange" data-percent="60"><span class="percent">85</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body easypiechart-panel">
+							<h4>Monteurs ingezet</h4>
+							<div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">67</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body easypiechart-panel">
+							<h4>Extern Ingehuurd</h4>
+							<div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="panel panel-default">
-					<div class="panel-heading">Uitgelopen en niet uitgelopen onderhoud</div>
-					<div class="panel-body">
-						<div class="canvas-wrapper">
-							<canvas class="main-chart" id="bar-chart" height="200" width="600"></canvas>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--/.row-->
-
-		<div class="row">
-
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">Klant overzicht</div>
+					<div class="panel-heading">Materiaal beschikbaarheid</div>
 					<div class="panel-body">
 						<table data-toggle="table" id="table-style" data-url="tables/data2.json" data-row-style="rowStyle">
 							<thead>
 								<tr>
-									<th data-field="customer" data-align="right">Klant</th>
-									<th data-field="hours">Extra Uren</th>
-									<th data-field="price">Kosten</th>
-									<th data-field="correctief">Correctieve uren</th>
-									<th data-field="preventief">Preventieve uren</th>
+									<th data-field="customer" data-align="right">Materiaal</th>
+									<th data-field="hours">Hoeveelheid beschikbaar</th>
+									<th data-field="price">Locatie</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="warning">
-									<td data-field="customer">Avans</td>
-									<td data-field="hours">10</td>
-									<td data-field="price">€15.000</td>
-									<td data-field="correctief">11</td>
-									<td data-field="preventief">24</td>
-								</tr>
 								<tr class="success">
-									<td data-field="product">HAN</td>
-									<td data-field="hours">34</td>
-									<td data-field="price">€42.000</td>
-									<td data-field="correctief">15</td>
-									<td data-field="preventief">15</td>
+									<td data-field="customer">Boor</td>
+									<td data-field="hours">10/30</td>
+									<td data-field="price">Opslag B42</td>
 								</tr>
 								<tr class="danger">
-									<td data-field="product">HAS</td>
-									<td data-field="hours">1</td>
-									<td data-field="price">€13.000</td>
-									<td data-field="correctief">15</td>
-									<td data-field="preventief">30</td>
+									<td data-field="product">Lasapparaten</td>
+									<td data-field="hours">0/6</td>
+									<td data-field="price">Opslag B1</td>
+								</tr>
+								<tr class="warning">
+									<td data-field="product">Verrijdbare lift</td>
+									<td data-field="hours">1/2</td>
+									<td data-field="price">AA</td>
+								</tr>
+								<tr class="success">
+									<td data-field="customer">Boor</td>
+									<td data-field="hours">10/30</td>
+									<td data-field="price">Opslag B42</td>
+								</tr>
+								<tr class="danger">
+									<td data-field="product">Lasapparaten</td>
+									<td data-field="hours">0/6</td>
+									<td data-field="price">Opslag B1</td>
+								</tr>
+								<tr class="warning">
+									<td data-field="product">Verrijdbare lift</td>
+									<td data-field="hours">1/2</td>
+									<td data-field="price">AA</td>
 								</tr>
 							</tbody>
 						</table>
@@ -161,83 +181,21 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
 				<div class="panel panel-default">
-
-					<div class="panel-body tabs">
-						<div class="panel-heading">Winstmarge op SLA
-						</div>
-						<ul class="nav nav-pills">
-							<li class="active"><a href="#pilltab1" data-toggle="tab">Avans</a></li>
-							<li><a href="#pilltab2" data-toggle="tab">HAN</a></li>
-							<li><a href="#pilltab3" data-toggle="tab">HAS</a></li>
-						</ul>
-
-						<div class="tab-content">
-							<div class="tab-pane fade in active" id="pilltab1">
-								<div class="canvas-wrapper">
-									<canvas class="chart" id="doughnut-chart"></canvas>
-									<p>Totale kosten: 23.000€</p>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="pilltab2">
-								<div class="tab-pane fade in active" id="pilltab1">
-									<div class="canvas-wrapper">
-										<canvas class="chart" id="doughnut-chart"></canvas>
-										<p>Totale kosten: 23.000€</p>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="pilltab3">
-								<div class="canvas-wrapper">
-									<div class="canvas-wrapper">
-										<canvas class="chart" id="doughnut-chart"></canvas>
-										<p>Totale kosten: 23.000€</p>
-									</div>
-								</div>
-							</div>
+					<div class="panel-heading"><div class="greyLabel noMargin">Service afdeling: </div><div class="greenLabel noMargin">Winst -</div><div class="redLabel noMargin">Kosten -</div><div class="blueLabel noMargin">Omzet</div>(x1000)</div>
+					<div class="panel-body">
+						<div class="canvas-wrapper">
+							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<!--/.row-->
-
-	<div class="row" style="margin-left: 30rem">
-		<div class="col-xs-6 col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-body easypiechart-panel">
-					<h4>First time right:</h4>
-					<div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-body easypiechart-panel">
-					<h4>Gepland onderhoud:</h4>
-					<div class="easypiechart" id="easypiechart-orange" data-percent="65"><span class="percent">65</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-body easypiechart-panel">
-					<h4>Ongepland onderhoud:</h4>
-					<div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--/.row-->
-
+		</div><!--/.row-->
 	</div>
 	<!--/.main-->
-
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -248,6 +206,9 @@
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/bootstrap-table.js"></script>
 	<script>
+		$('#calendar').datepicker({
+		});
+
 		!function ($) {
 		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
 		        $(this).find('em:first').toggleClass("glyphicon-minus");      

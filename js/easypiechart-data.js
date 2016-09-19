@@ -6,6 +6,13 @@ $(function() {
 });
 
 $(function() {
+    $('#easypiechart-green').easyPieChart({
+        scaleColor: false,
+        barColor: '#189E52'
+    });
+});
+
+$(function() {
     $('#easypiechart-orange').easyPieChart({
         scaleColor: false,
         barColor: '#ffb53e'

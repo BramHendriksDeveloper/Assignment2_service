@@ -5,26 +5,35 @@ var lineChartData = {
 	datasets: [
 		{
 			label: "My First dataset",
-			fillColor: "rgba(220,220,220,0.2)",
-			strokeColor: "rgba(220,220,220,1)",
-			pointColor: "rgba(220,220,220,1)",
-			pointStrokeColor: "#fff",
-			pointHighlightFill: "#fff",
-			pointHighlightStroke: "rgba(220,220,220,1)",
-			data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-		},
-		{
-			label: "My Second dataset",
-			fillColor: "rgba(48, 164, 255, 0.2)",
-			strokeColor: "rgba(48, 164, 255, 1)",
-			pointColor: "rgba(48, 164, 255, 1)",
+			fillColor: "rgba(24, 158, 82, 0.2)",
+			strokeColor: "rgba(24, 158, 82, 1)",
+			pointColor: "rgba(24, 158, 82, 1)",
 			pointStrokeColor: "#fff",
 			pointHighlightFill: "#fff",
 			pointHighlightStroke: "rgba(48, 164, 255, 1)",
-			data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			data: [200, 160, 212, 180, 175, 252, 230]
+		},
+		{
+			label: "My Second dataset",
+			fillColor: "rgba(255,51,0,0.2)",
+			strokeColor: "rgba(255,51,0,1)",
+			pointColor: "rgba(255,51,0,1)",
+			pointStrokeColor: "#fff",
+			pointHighlightFill: "#fff",
+			pointHighlightStroke: "rgba(220,220,220,1)",
+			data: [180, 116, 142, 170, 145, 237, 218]
+		},
+		{
+			label: "My First dataset",
+			fillColor: "rgba(48, 146, 255, 0.2)",
+			strokeColor: "rgba(48, 146, 255, 1)",
+			pointColor: "rgba(48, 146, 255, 1)",
+			pointStrokeColor: "#fff",
+			pointHighlightFill: "#fff",
+			pointHighlightStroke: "rgba(48, 146, 255, 1)",
+			data: [20, 44, 70, 10, 30, 15, 12]
 		}
 	]
-
 }
 
 var barChartData = {
