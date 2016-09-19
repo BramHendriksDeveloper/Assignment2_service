@@ -932,3 +932,26 @@ h1.page-header {
 .main {
 	margin-top: 20px;
 }
+
+.greenLabel {
+	color: rgba(24, 158, 82, 1);
+}
+
+.yellowLabel {
+	color: rgba(255,170,0,1);
+}
+
+.redLabel {
+	color: rgba(255,51,0,1);
+}
+
+.blueLabel {
+	color: rgba(48, 164, 255, 1);
+}
+
+.noMargin {
+	margin: 0;
+	margin-right: 5px;
+	padding: 0;
+	float: left;
+}
